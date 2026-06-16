@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>naa 2gd • Premium Car Dealership</title>
+  <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+  <style>
+    @import url('[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap)');
+    
+    :root {
+      --primary: #0F172A;
+    }
+    
+    body {
+      font-family: 'Inter', system_ui, sans-serif;
+    }
+    
+    .heading-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .nav-active {
+      color: #0F172A;
+      font-weight: 600;
+    }
+
+    .car-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .car-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1);
+    }
+
+    .hero-bg {
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.65)), url('[picsum.photos](https://picsum.photos/id/1018/2000/1200)');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .section-header {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .nav-scrolled {
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Navbar -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-x-3">
+          <!-- Logo -->
+          <div class="flex items-center gap-x-2">
+            <div class="w-11 h-11 bg-slate-900 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-3xl tracking-tighter">NA</span>
+            </div>
+            <div>
+              <span class="font-bold text-3xl tracking-tighter">naa</span>
+              <span class="font-bold text-3xl tracking-tighter text-slate-500">2gd</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-x-8 text-sm font-medium">
+          <a href="#home" class="hover:text-slate-600 transition-colors">Beranda</a>
+          <a href="#models" class="hover:text-slate-600 transition-colors">Model Mobil</a>
+          <a href="#why" class="hover:text-slate-600 transition-colors">Mengapa Kami</a>
+        </div>
+
+        <div class="flex items-center gap-x-4">
+          <div class="flex items-center gap-x-2">
+            <div class="px-3 py-1.5 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full flex items-center gap-x-1.5">
+              <i class="fa-solid fa-check text-emerald-600"></i>
+              <span class="font-semibold">Tersedia 142 unit</span>
+            </div>
+          </div>
+          <button onclick="contactSales()"
+                  class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 transition-colors text-white text-sm font-semibold rounded-xl flex items-center gap-x-2">
+            <i class="fa-solid fa-phone"></i>
+            <span>Hubungi Sales</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg h-[580px] flex items-center">
+    <div class="max-w-screen-2xl mx-auto px-8 text-white">
+      <div class="max-w-lg">
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur text-sm mb-6">
+          <span class="font-medium">Official Dealer Toyota Diesel • 2026</span>
+        </div>
+        
+        <h1 class="text-6xl font-bold leading-none tracking-tighter">
+          Kendaraan<br>
+          yang Anda<br>
+          percayai
+        </h1>
+        
+        <p class="mt-6 max-w-md text-lg text-white/90">
+          Semua mobil diesel terbaik dengan garansi resmi dan layanan purna jual terpercaya.
+        </p>
+        
+        <div class="mt-8 flex items-center gap-x-4">
+          <a href="#models" 
+             class="px-8 py-4 bg-white hover:bg-gray-100 text-slate-900 font-semibold rounded-2xl text-sm flex items-center transition-all">
+            Lihat Koleksi
+          </a>
+          <button onclick="contactSales()" 
+                  class="px-7 py-4 border border-white/40 hover:bg-white/10 transition-colors text-sm font-medium rounded-2xl flex items-center gap-x-2">
+            <i class="fa-solid fa-play text-xs"></i>
+            <span>Tonton Video</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="max-w-screen-2xl mx-auto px-8 py-5 bg-white flex items-center justify-center border-b">
+    <div class="flex items-center justify-center gap-x-10 opacity-75">
+      <div class="flex items-center gap-x-2">
+        <i class="fa-solid fa-shield-halved text-xl"></i>
+        <span class="font-semibold text-sm">Garansi 5 Tahun</span>
+      </div>
+      <div class="flex items-center gap-x-2">
+        <i class="fa-solid fa-truck text-xl"></i>
+        <span class="font-semibold text-sm">Gratis Pengiriman</span>
+      </div>
+      <div class="flex items-center gap-x-2">
+        <i class="fa-solid fa-headset text-xl"></i>
+        <span class="font-semibold text-sm">Layanan 24/7</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Models Section -->
+  <section id="models" class="max-w-screen-2xl mx-auto px-8 pt-12 pb-16">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <h2 class="section-header">Model Tersedia</h2>
+        <p class="text-slate-500 mt-1">Pilih kendaraan yang sesuai dengan kebutuhan Anda</p>
+      </div>
+      <a href="#" class="text-sm flex items-center font-semibold">
+        Lihat Semua <i class="fa-solid fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+
+    <!-- Cars Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+      
+      <!-- Toyota Innova Zenix Diesel -->
+      <div class="car-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+        <div class="relative">
+          <img src="[picsum.photos](https://picsum.photos/id/1015/600/340)" class="w-full h-56 object-cover" alt="Toyota Kijang Innova Zenix Diesel">
+          <div class="absolute top-4 right-4">
+            <span class="badge bg-emerald-600 text-white rounded-full">TERLARIS</span>
+          </div>
+        </div>
+        <div class="px-6 pt-5 pb-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-xl">Innova Zenix</h3>
+              <p class="text-emerald-700 text-sm font-medium">Diesel 2.4L</p>
+            </div>
+            <div class="text-right">
+              <div class="price">Rp 425jt</div>
+              <p class="text-xs text-slate-400">On The Road</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-x-3 mt-4">
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">278Nm</div>
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">186 Ps</div>
+          </div>
+          
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <div class="flex text-emerald-600 text-xs font-semibold">
+                <i class="fa-solid fa-check mr-1 mt-0.5"></i>
+                <span>52 unit tersisa</span>
+              </div>
+            </div>
+            <button onclick="showCarDetail(0)" 
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 transition-colors text-white text-sm font-medium rounded-xl">
+              Beli Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Hilux -->
+      <div class="car-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+        <div class="relative">
+          <img src="[picsum.photos](https://picsum.photos/id/1016/600/340)" class="w-full h-56 object-cover" alt="Toyota Hilux Revo Diesel">
+          <div class="absolute top-4 right-4">
+            <span class="badge bg-blue-600 text-white rounded-full">PICKUP</span>
+          </div>
+        </div>
+        <div class="px-6 pt-5 pb-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-xl">Hilux REVO</h3>
+              <p class="text-emerald-700 text-sm font-medium">Diesel 2.8L</p>
+            </div>
+            <div class="text-right">
+              <div class="price">Rp 598jt</div>
+              <p class="text-xs text-slate-400">On The Road</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-x-3 mt-4">
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">500Nm</div>
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">204 Ps</div>
+          </div>
+          
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <div class="flex text-emerald-600 text-xs font-semibold">
+                <i class="fa-solid fa-check mr-1 mt-0.5"></i>
+                <span>27 unit tersisa</span>
+              </div>
+            </div>
+            <button onclick="showCarDetail(1)" 
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 transition-colors text-white text-sm font-medium rounded-xl">
+              Beli Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toyota Fortuner -->
+      <div class="car-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+        <div class="relative">
+          <img src="[picsum.photos](https://picsum.photos/id/1005/600/340)" class="w-full h-56 object-cover" alt="Toyota Fortuner Diesel">
+          <div class="absolute top-4 right-4">
+            <span class="badge bg-amber-600 text-white rounded-full">TOP RATED</span>
+          </div>
+        </div>
+        <div class="px-6 pt-5 pb-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-xl">Fortuner</h3>
+              <p class="text-emerald-700 text-sm font-medium">Diesel 2.4L / 2.8L</p>
+            </div>
+            <div class="text-right">
+              <div class="price">Rp 685jt</div>
+              <p class="text-xs text-slate-400">On The Road</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-x-3 mt-4">
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">420Nm</div>
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">204 Ps</div>
+          </div>
+          
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <div class="flex text-emerald-600 text-xs font-semibold">
+                <i class="fa-solid fa-check mr-1 mt-0.5"></i>
+                <span>34 unit tersisa</span>
+              </div>
+            </div>
+            <button onclick="showCarDetail(2)" 
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 transition-colors text-white text-sm font-medium rounded-xl">
+              Beli Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mitsubishi Triton -->
+      <div class="car-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+        <div class="relative">
+          <img src="[picsum.photos](https://picsum.photos/id/1060/600/340)" class="w-full h-56 object-cover" alt="Mitsubishi Triton Diesel">
+          <div class="absolute top-4 right-4">
+            <span class="badge bg-violet-600 text-white rounded-full">RUGGED</span>
+          </div>
+        </div>
+        <div class="px-6 pt-5 pb-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-semibold text-xl">Triton</h3>
+              <p class="text-emerald-700 text-sm font-medium">Diesel 2.4L</p>
+            </div>
+            <div class="text-right">
+              <div class="price">Rp 485jt</div>
+              <p class="text-xs text-slate-400">On The Road</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-x-3 mt-4">
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">470Nm</div>
+            <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">181 Ps</div>
+          </div>
+          
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <div class="flex text-emerald-600 text-xs font-semibold">
+                <i class="fa-solid fa-check mr-1 mt-0.5"></i>
+                <span>19 unit tersisa</span>
+              </div>
+            </div>
+            <button onclick="showCarDetail(3)" 
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 transition-colors text-white text-sm font-medium rounded-xl">
+              Beli Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why" class="bg-white py-14 border-y">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <h3 class="font-semibold text-lg">Garansi Resmi</h3>
+          <p class="text-sm text-slate-600 mt-1">Semua kendaraan baru dilengkapi garansi resmi 5 tahun/150.000 km.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">Servis Home</h3>
+          <p class="text-sm text-slate-600 mt-1">Kami menyediakan layanan ambil dan antar gratis untuk servis berkala.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">Harga Transparan</h3>
+          <p class="text-sm text-slate-600 mt-1">Tidak ada biaya tersembunyi. Semua biaya sudah termasuk dalam harga.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-screen-2xl mx-auto px-8 py-8 text-sm text-slate-500">
+    <div class="flex flex-col md:flex-row justify-between gap-y-2">
+      <div>
+        <span class="font-medium text-slate-700">naa 2gd</span> © 2026
+      </div>
+      <div class="flex gap-x-6 text-xs">
+        <span>Syarat &amp; Ketentuan</span>
+        <span>Kebijakan Privasi</span>
+        <span>Hubungi Kami</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Detail Mobil -->
+  <div id="carModal" onclick="if (event.target.id === 'carModal') hideModal()" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center">
+    <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-lg mx-4 rounded-3xl overflow-hidden">
+      <!-- Modal content populated via JS -->
+      <div id="modalContent" class="p-7"></div>
+    </div>
+  </div>
+
+  <script>
+    const cars = [
+      {
+        id: 0,
+        name: "Toyota Kijang Innova Zenix",
+        variant: "2.4L Diesel 2WD",
+        price: 425000000,
+        torque: "278 Nm",
+        power: "186 Ps",
+        stock: 52,
+        img: "[picsum.photos](https://picsum.photos/id/1015/800/520)",
+        desc: "MPV kelas premium dengan mesin diesel 2.4L yang bertenaga dan efisien. Cocok untuk keluarga dengan ruang kabin yang sangat lega.",
+        fuel: "Diesel",
+        transmission: "8-speed Direct Shift"
+      },
+      {
+        id: 1,
+        name: "Toyota Hilux REVO",
+        variant: "2.8L Double Cabin",
+        price: 598000000,
+        torque: "500 Nm",
+        power: "204 Ps",
+        stock: 27,
+        img: "[picsum.photos](https://picsum.photos/id/1016/800/520)",
+        desc: "Pickup tangguh dengan performa mesin diesel terbaik di kelasnya. Ideal untuk penggunaan kerja maupun petualangan.",
+        fuel: "Diesel",
+        transmission: "6-speed Automatic"
+      },
+      {
+        id: 2,
+        name: "Toyota Fortuner",
+        variant: "2.8L VRZ",
+        price: 685000000,
+        torque: "420 Nm",
+        power: "204 Ps",
+        stock: 34,
+        img: "[picsum.photos](https://picsum.photos/id/1005/800/520)",
+        desc: "SUV diesel legendaris dengan karakter off-road dan kelas eksekutif. Menawarkan kenyamanan dan kekuatan dalam satu paket.",
+        fuel: "Diesel",
+        transmission: "6-speed Automatic"
+      },
+      {
+        id: 3,
+        name: "Mitsubishi Triton",
+        variant: "2.4L Athlete",
+        price: 485000000,
+        torque: "470 Nm",
+        power: "181 Ps",
+        stock: 19,
+        img: "[picsum.photos](https://picsum.photos/id/1060/800/520)",
+        desc: "Pick-up gaya baru dengan desain agresif dan kemampuan off-road yang mumpuni, didukung mesin diesel 2.4L yang modern.",
+        fuel: "Diesel",
+        transmission: "6-speed Automatic"
+      }
+    ];
+
+    function formatPrice(price) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      }).format(price);
+    }
+
+    function showCarDetail(carId) {
+      const car = cars[carId];
+      const modal = document.getElementById('carModal');
+      const content = document.getElementById('modalContent');
+      
+      content.innerHTML = `
+        <div>
+          <div class="flex justify-between items-start mb-5">
+            <div>
+              <h3 class="font-bold text-3xl">${car.name}</h3>
+              <p class="text-emerald-700 font-semibold">${car.variant}</p>
+            </div>
+            <button onclick="hideModal()" class="text-slate-400 hover:text-slate-600">
+              <i class="fa-solid fa-times text-3xl"></i>
+            </button>
+          </div>
+
+          <img src="${car.img}" class="w-full h-64 object-cover rounded-2xl mb-6" alt="${car.name}">
+          
+          <div class="flex justify-between items-center mb-6">
+            <div>
+              <div class="text-xl font-bold">${formatPrice(car.price)}</div>
+              <div class="text-emerald-600 text-xs font-medium">On The Road • Jakarta<|eos|>
